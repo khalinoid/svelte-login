@@ -129,6 +129,9 @@ class Svelte_Login
 
 		require_once plugin_dir_path(dirname(__FILE__)) . 'public/controller/login.php';
 
+		require_once plugin_dir_path(dirname(__FILE__)) . 'public/controller/api.php';
+
+
 
 		$this->loader = new Svelte_Login_Loader();
 	}
@@ -185,6 +188,7 @@ class Svelte_Login
 		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_styles');
 		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_scripts');
 
+		$svelte_login_api = new Svelte_Login_API();
 		$svelte_login = new Svelte_Login_Page();
 		$this->loader->add_shortcode('svelte_login_front', $svelte_login, 'svelte_login_frontend');
 	}
