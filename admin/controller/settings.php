@@ -30,7 +30,7 @@ class Svelte_Register_Shortcode
     public function svelte_login_register_shortcode(){
         $url = home_url();
         header("Access-Control-Allow-Origin: $url");
-        header("Access-Control-Allow-Methods: GET");
+        header("Access-Control-Allow-Methods: GET,POST");
         header("Access-Control-Allow-Credentials: true");
 
         
